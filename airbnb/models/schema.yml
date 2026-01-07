@@ -5,7 +5,8 @@ models:
       - minimum_row_count:
           arguments:
             min_row_count: 1000
-          severity: error
+          config:
+            severity: error
     columns:
       - name: listing_id
         description: Primary key for the listing
@@ -27,10 +28,7 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                values: [ 'Entire home/apt',
-                          'Private room',
-                          'Shared room',
-                          'Hotel room' ]
+                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
       - name: minimum_nights
         description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
         data_tests:
